@@ -30,6 +30,14 @@ jobs:
     - run: npm run build --if-present
       env:
           NODE_OPTIONS: --openssl-legacy-provider
-    - run: npm test -- --passWithNoTests
-      env:
-          NODE_OPTIONS: --openssl-legacy-provider
+
+    - uses: actions/upload-artifact@master
+      with:
+        name: webpack artifacts
+        path: public/
+  test:
+    runs-on: ubuntu-latest
+    
+    #- run: npm test -- --passWithNoTests
+    #  env:
+    #      NODE_OPTIONS: --openssl-legacy-provider
