@@ -37,7 +37,8 @@ jobs:
         path: public/
   test:
     runs-on: ubuntu-latest
-    
-    #- run: npm test -- --passWithNoTests
-    #  env:
-    #      NODE_OPTIONS: --openssl-legacy-provider
+
+    steps:
+    - run: npm test -- --passWithNoTests
+      env:
+          NODE_OPTIONS: --openssl-legacy-provider
