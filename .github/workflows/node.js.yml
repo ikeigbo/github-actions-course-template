@@ -40,6 +40,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    - name: webpack-artifacts-${{ matrix.node-version }}
     - run: npm test -- --passWithNoTests
       env:
           NODE_OPTIONS: --openssl-legacy-provider
