@@ -39,6 +39,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - uses: actions/checkout@v4
     - run: npm test -- --passWithNoTests
       env:
           NODE_OPTIONS: --openssl-legacy-provider
